@@ -68,9 +68,9 @@ class domeEncoder(object):
         self.log.write("Encoder %i: Encoder %i -- Change: %i -- Time: %i -- Position: %i\n" % (source.getSerialNum(), e.index, e.positionChange, e.time, encoder.getPosition(e.index)))
         #print("Encoder %i: Encoder %i -- Change: %i -- Time: %i -- Position: %i" % (source.getSerialNum(), e.index, e.positionChange, e.time, encoder.getPosition(e.index)))
     #    getDomePos(e)
-        self.log.write( "Dome at %i\n" % ((float((encoder.getPosition(e.index))/float(1500))*360.0)%360.0))
+        self.log.write( "Dome at %i\n" % ((float((encoder.getPosition(e.index))/float(89500))*360.0)%360.0))
 	with open(self.currentPos,'w') as fin:    
-		fin.write("%i" % ((float((encoder.getPosition(e.index))/float(1500))*360.0)%360.0))
+		fin.write("%i" % ((float((encoder.getPosition(e.index))/float(89500))*360.0)%360.0))
 		fin.flush()
 
 

@@ -48,7 +48,7 @@ if __name__ == '__main__':
     print 'Tracking dome position:\n'
     #print 'Press q to quit'
     a = True
-    while a == True:
+    while True:
 	g.readData()		
         pos = g.current
         azPos = g.azPos
@@ -57,14 +57,14 @@ if __name__ == '__main__':
 	print datas
 	with open('domePos.out','w') as fin:
 	    fin.write(''.join(datas))
-	userInput = raw_input('Press q to quit\n')
-        if userInput == 'q\n':
-            print 'Stopping dome tracking'
-            p.terminate()
-            print 'test: quitting domeEncoder.py'
-            #subprocess.Popen(['rm','currentPos.txt'])
-            print 'exiting...'
-            break
+#	userInput = raw_input('Press q to quit\n')
+#        if userInput == 'q\n':
+#            print 'Stopping dome tracking'
+#            p.terminate()
+#            print 'test: quitting domeEncoder.py'
+#            #subprocess.Popen(['rm','currentPos.txt'])
+#            print 'exiting...'
+#            break
 
 	#take user input q to quit: first use subprocess to press enter to quit domeEncoder.py,
 	#then quit this program
